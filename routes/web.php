@@ -13,7 +13,6 @@ use Laravel\Fortify\Features;
 
 
 Route::domain('hpanel.ilvarire.com')
-    ->middleware(['auth', 'rolemanager:admin'])
     ->group(function () {
         Route::get('/', function () {
             return view('welcome');
