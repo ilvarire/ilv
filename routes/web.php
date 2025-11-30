@@ -11,16 +11,6 @@ use App\Livewire\Settings\TwoFactor;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
-
-Route::domain('hpanel.ilvarire.com')
-    ->group(function () {
-        Route::get('/', function () {
-            return view('welcome');
-        })->name('try');
-        // Add other admin routes here...
-    });
-
-
 Route::view('/maintenance', 'pages.maintenance-page')
     ->middleware('notmaintenance')
     ->name('maintenance');
