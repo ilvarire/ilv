@@ -23,11 +23,11 @@ use Laravel\Fortify\Features;
 Route::view('/maintenance', 'pages.maintenance-page')
     ->middleware('notmaintenance')
     ->name('maintenance');
-// Route::get('dashboard', [AuthCustomerController::class, 'dashboard'])
-//     ->middleware(['auth', 'verified', 'maintenance'])
-//     ->name('dashboard');
+Route::get('dashboard', [AuthCustomerController::class, 'dashboard'])
+    ->middleware(['auth', 'verified', 'maintenance'])
+    ->name('dashboard');
 
-Route::middleware('maintenance')->group(function () {
+Route::middleware('maintenance')->controller(CustomerController::class)->group(function () {
 
     Route::get('/', 'home')->name('home');
     Route::get('/cart', 'cart')->name('cart');
