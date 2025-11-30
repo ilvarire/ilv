@@ -27,6 +27,7 @@ class Dashboard extends Component
 
     public function mount()
     {
+        dd('yes');
         $this->authorizeAccess();
         $this->loadDashboardData();
         $this->loadLineGraphData();
