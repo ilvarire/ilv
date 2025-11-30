@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ $site->site_title ? $title . ' - ' . str($site->site_title)->title() : $title}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="{{ $site->site_title ?? config('app.name', 'Laravel')}}">
+    <meta name="keywords"
+        content="online shopping, e-commerce, buy online, online store, best deals, shopping cart, shopping website, ecommerce store, products online, fast delivery, free shipping, secure checkout, online deals">
+    <meta name="robots" content="">
+    <link rel="canonical" href="{{ config('app.url') }}" />
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config('app.url') }}">
+    <meta property="og:title" content="{{ $site->site_description}}">
+    <meta property="og:description"
+        content="Discover the latest trends and best deals at {{ config('app.name', 'Laravel') }}. Shop now for devices, electronics, home goods, and more with free shipping and secure checkout.">
+    <meta property="og:image" content="{{ $site->og_image}}">
+
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ config('app.url') }}">
+    <meta name="twitter:title" content="{{ $site->site_description}}">
+    <meta name="twitter:description"
+        content="Discover the latest trends and best deals at {{ config('app.name', 'Laravel') }}. Shop now for devices, electronics, home goods, and more with free shipping and secure checkout.">
+    <meta name="twitter:image" content="{{ $site->og_image}}">
+
+
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{{ asset('storage/' . $site->favicon) }}" />
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/fonts/linearicons-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/slick/slick.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/MagnificPopup/magnific-popup.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!--===============================================================================================-->
+    @fluxAppearance
+    @stack('styles')
+</head>
+
+<body class="animsition">
+
+    <!-- Header -->
+    @include('components.customer.header', ['version' => 'header-v4'])
+
+    <!-- Cart -->
+    @livewire('customer.slide-cart')
+
+    {{ $slot }}
+
+
+    <!-- Footer -->
+    @livewire('customer.footer')
+
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <i class="zmdi zmdi-chevron-up"></i>
+        </span>
+    </div>
+
+    @stack('scripts')
+    <script>
+        window.addEventListener('reinitmodal', () => {
+            setTimeout(() => {
+                $('.js-modal1').addClass('show-modal1');
+
+                $(".js-select2").each(function () {
+                    $(this).select2({
+                        minimumResultsForSearch: 20,
+                        dropdownParent: $(this).next('.dropDownSelect2')
+                    });
+                });
+
+
+                $('#slick3').each(function () {
+                    $(this).find('.slick3').slick({
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        fade: true,
+                        infinite: true,
+                        autoplay: false,
+                        autoplaySpeed: 6000,
+
+                        arrows: true,
+                        appendArrows: $(this).find('.wrap-slick3-arrows'),
+                        prevArrow: '<button class="arrow-slick3 prev-slick3"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+                        nextArrow: '<button class="arrow-slick3 next-slick3"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+
+                        dots: true,
+                        appendDots: $(this).find('.wrap-slick3-dots'),
+                        dotsClass: 'slick3-dots',
+                        customPaging: function (slick, index) {
+                            var portrait = $(slick.$slides[index]).data('thumb');
+                            return '<img src=" ' + portrait + ' "/><div class="slick3-dot-overlay"></div>';
+                        },
+                    });
+                });
+
+                $('.wrap-slick2').each(function () {
+                    $(this).find('.slick2').slick({
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                        infinite: false,
+                        autoplay: false,
+                        autoplaySpeed: 6000,
+                        arrows: true,
+                        appendArrows: $(this),
+                        prevArrow: '<button class="arrow-slick2 prev-slick2"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+                        nextArrow: '<button class="arrow-slick2 next-slick2"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+                        responsive: [
+                            {
+                                breakpoint: 1200,
+                                settings: {
+                                    slidesToShow: 4,
+                                    slidesToScroll: 4
+                                }
+                            },
+                            {
+                                breakpoint: 992,
+                                settings: {
+                                    slidesToShow: 3,
+                                    slidesToScroll: 3
+                                }
+                            },
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    slidesToShow: 2,
+                                    slidesToScroll: 2
+                                }
+                            },
+                            {
+                                breakpoint: 576,
+                                settings: {
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1
+                                }
+                            }
+                        ]
+                    });
+                });
+
+            }, 20);
+
+
+        });
+
+        window.addEventListener('close-product-modal', () => {
+            $('.js-modal1').removeClass('show-modal1');
+            $('.wrap-slick2').each(function () {
+                $(this).find('.slick2').slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    infinite: false,
+                    autoplay: false,
+                    autoplaySpeed: 6000,
+                    arrows: true,
+                    appendArrows: $(this),
+                    prevArrow: '<button class="arrow-slick2 prev-slick2"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+                    nextArrow: '<button class="arrow-slick2 next-slick2"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+                    responsive: [
+                        {
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 4,
+                                slidesToScroll: 4
+                            }
+                        },
+                        {
+                            breakpoint: 992,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        },
+                        {
+                            breakpoint: 576,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            });
+        });
+
+        window.addEventListener('reinit-slick', () => {
+            setTimeout(() => {
+                $(".js-select2").each(function () {
+                    $(this).select2({
+                        minimumResultsForSearch: 20,
+                        dropdownParent: $(this).next('.dropDownSelect2')
+                    });
+                });
+
+                $('.wrap-slick3').each(function () {
+                    $(this).find('.slick3').slick({
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        fade: true,
+                        infinite: true,
+                        autoplay: false,
+                        autoplaySpeed: 6000,
+
+                        arrows: true,
+                        appendArrows: $(this).find('.wrap-slick3-arrows'),
+                        prevArrow: '<button class="arrow-slick3 prev-slick3"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+                        nextArrow: '<button class="arrow-slick3 next-slick3"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+
+                        dots: true,
+                        appendDots: $(this).find('.wrap-slick3-dots'),
+                        dotsClass: 'slick3-dots',
+                        customPaging: function (slick, index) {
+                            var portrait = $(slick.$slides[index]).data('thumb');
+                            return '<img src=" ' + portrait + ' "/><div class="slick3-dot-overlay"></div>';
+                        },
+                    });
+                });
+
+                $('.wrap-slick2').each(function () {
+                    $(this).find('.slick2').slick({
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                        infinite: false,
+                        autoplay: false,
+                        autoplaySpeed: 6000,
+                        arrows: true,
+                        appendArrows: $(this),
+                        prevArrow: '<button class="arrow-slick2 prev-slick2"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+                        nextArrow: '<button class="arrow-slick2 next-slick2"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+                        responsive: [
+                            {
+                                breakpoint: 1200,
+                                settings: {
+                                    slidesToShow: 4,
+                                    slidesToScroll: 4
+                                }
+                            },
+                            {
+                                breakpoint: 992,
+                                settings: {
+                                    slidesToShow: 3,
+                                    slidesToScroll: 3
+                                }
+                            },
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    slidesToShow: 2,
+                                    slidesToScroll: 2
+                                }
+                            },
+                            {
+                                breakpoint: 576,
+                                settings: {
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1
+                                }
+                            }
+                        ]
+                    });
+                });
+                $('.js-modal1').addClass('show-modal1');
+
+            }, 20);
+        });
+
+
+        window.addEventListener('alert-modal', event => {
+            const message = event.detail[0].message;
+            const type = event.detail[0].type;
+            const product = event.detail[0].product ?? '';
+
+            swal({
+                title: product ? product : '',
+                text: message,
+                icon: type, // can be 'success', 'error', 'warning', 'info'
+                button: "OK",
+            });
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/bootstrap/js/popper.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/select2/select2.min.js"></script>
+    <script>
+        $(".js-select2").each(function () {
+            $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2')
+            });
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="/vendor/daterangepicker/moment.min.js"></script>
+    <script src="/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/slick/slick.min.js"></script>
+    <script src="/js/slick-custom.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/parallax100/parallax100.js"></script>
+    <script>
+        $('.parallax100').parallax100();
+    </script>
+    <!--===============================================================================================-->
+    <script src="/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+    <script>
+        $('.gallery-lb').each(function () { // the containers for all your galleries
+            $(this).magnificPopup({
+                delegate: 'a', // the selector for gallery item
+                type: 'image',
+                gallery: {
+                    enabled: true
+                },
+                mainClass: 'mfp-fade'
+            });
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="/vendor/isotope/isotope.pkgd.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendor/sweetalert/sweetalert.min.js"></script>
+    <script>
+        $('.js-addwish-b2').on('click', function (e) {
+            e.preventDefault();
+        });
+
+        $('.js-addwish-b2').each(function () {
+            var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+            $(this).on('click', function () {
+                swal(nameProduct, "is added to wishlist !", "success");
+
+                $(this).addClass('js-addedwish-b2');
+                $(this).off('click');
+            });
+        });
+
+        $('.js-addwish-detail').each(function () {
+            var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+            $(this).on('click', function () {
+                swal(nameProduct, "is added to wishlist !", "success");
+
+                $(this).addClass('js-addedwish-detail');
+                $(this).off('click');
+            });
+        });
+
+        /*---------------------------------------------*/
+
+        $('.js-addcart-detail').each(function () {
+            var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+            $(this).on('click', function () {
+                swal(nameProduct, "is added to cart !", "success");
+            });
+        });
+
+    </script>
+    <!--===============================================================================================-->
+    <script src="/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script>
+        $('.js-pscroll').each(function () {
+            $(this).css('position', 'relative');
+            $(this).css('overflow', 'hidden');
+            var ps = new PerfectScrollbar(this, {
+                wheelSpeed: 1,
+                scrollingThreshold: 1000,
+                wheelPropagation: false,
+            });
+
+            $(window).on('resize', function () {
+                ps.update();
+            })
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="/js/main.js"></script>
+    @fluxScripts
+</body>
+
+</html>
