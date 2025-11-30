@@ -23,9 +23,9 @@ use Laravel\Fortify\Features;
 Route::view('/maintenance', 'pages.maintenance-page')
     ->middleware('notmaintenance')
     ->name('maintenance');
-Route::get('dashboard', [CustomerController::class, 'home'])
-    ->middleware(['auth', 'verified', 'maintenance', 'rolemanager:customer'])
-    ->name('dashboard');
+// Route::get('dashboard', [AuthCustomerController::class, 'dashboard'])
+//     ->middleware(['auth', 'verified', 'maintenance'])
+//     ->name('dashboard');
 
 Route::middleware('maintenance')->group(function () {
 

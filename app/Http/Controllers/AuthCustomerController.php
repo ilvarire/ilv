@@ -10,6 +10,16 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthCustomerController extends Controller
 {
+    public function dashboard()
+    {
+        if (Auth::user()->role === 2) {
+            return redirect(route('home'));
+        } else if (Auth::user()->role === 1) {
+            return redirect(route('admin.dashboard'));
+        } else {
+            return redirect(route('home'));
+        }
+    }
     public function checkout()
     {
         $cart_count = count(CartSession::getCartItemsFromSession());
