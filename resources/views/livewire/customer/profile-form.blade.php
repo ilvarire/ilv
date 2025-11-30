@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit.prevent="updateProfile" method="post" id="profile" class="bg0 p-t-75 p-b-85">
+    <form wire:submit.prevent="updateProfile" method="post" id="profile" class="bg0 p-b-85">
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
