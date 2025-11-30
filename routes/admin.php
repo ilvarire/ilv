@@ -27,9 +27,12 @@ use App\Livewire\Admin\Tags;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'rolemanager:admin'])->group(function () {
+    Route::get('/admin', Dashboard::class);
+});
+Route::middleware(['auth', 'rolemanager:admin'])->group(function () {
     Route::group(['prefix' => 'admin'], function () {
         //dashboard
-        Route::redirect('/', '/dashboard');
+        // Route::redirect('/', '/dashboard');
         Route::get('/dashboard', Dashboard::class)->name('admin.dashboard');
 
         //categories
