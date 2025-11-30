@@ -35,7 +35,7 @@ class Dashboard extends Component
     protected function authorizeAccess()
     {
         if (!Auth::user() || Auth::user()->role !== 1) {
-            abort(403, 'Unauthorized');
+            return redirect(route('home'));
         }
     }
 
