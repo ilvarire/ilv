@@ -12,12 +12,14 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
 
-// Route::domain('admin.ecom.test')->group(function () {
-//     Route::get('/', function () {
-//         return view('welcome');
-//     })->name('home1');
-//     // Add other admin routes here...
-// });
+Route::domain('hpanel.ilvarire.com')
+    ->middleware(['auth', 'rolemanager:admin'])
+    ->group(function () {
+        Route::get('/', function () {
+            return view('welcome');
+        })->name('try');
+        // Add other admin routes here...
+    });
 
 
 Route::view('/maintenance', 'pages.maintenance-page')
