@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // $site = General::select('og_image', 'logo', 'top_text', 'favicon', 'site_description', 'site_title')->take(1)->first();
-        // View::share('site', $site);
+        $site = General::select('og_image', 'logo', 'top_text', 'favicon', 'site_description', 'site_title')->take(1)->first();
+        View::share('site', $site);
     }
 }
