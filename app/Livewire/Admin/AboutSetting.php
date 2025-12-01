@@ -33,8 +33,8 @@ class AboutSetting extends Component
             'story_two' => 'required|string',
             'mission_one' => 'required|string',
             'mission_two' => 'required|string',
-            'story_image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'mission_image' => 'required|image|mimes:jpg,jpeg,png|max:2048'
+            'story_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'mission_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
         $about = About::take(1)->first();
 

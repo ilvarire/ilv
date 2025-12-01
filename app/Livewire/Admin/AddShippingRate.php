@@ -46,7 +46,7 @@ class AddShippingRate extends Component
         ]);
 
         session()->flash('success', 'Shipping info added successfully');
-        $this->reset(['country_id', 'state', 'base_fee', 'fee_per_kg']);
+        $this->reset();
     }
     public function render()
     {

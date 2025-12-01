@@ -29,7 +29,7 @@
 
             <div class="flex items-center justify-end">
                 <flux:button variant="primary" style="border-radius: 20px; background: #3743ed; color: #fff;"
-                    type="submit" class="w-full" data-test="login-button">
+                    type="submit" class="w-full text-sm cursor-pointer" data-test="login-button">
                     {{ __('Log in') }}
                 </flux:button>
             </div>

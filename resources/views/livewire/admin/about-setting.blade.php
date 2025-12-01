@@ -80,7 +80,7 @@
 
                 <input type="file" accept="image/*" wire:model="story_image" value="{{ old('story_image') }}"
                     class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input"
-                    placeholder="Select Image" required />
+                    placeholder="Select Image" />
                 @error('story_image')
                     <span class="text-xs text-red-600 dark:text-red-400">
                         {{$message}}
@@ -100,7 +100,7 @@
                 </span>
                 <input type="file" accept="image/*" wire:model="mission_image" value="{{ old('mission_image') }}"
                     class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input"
-                    placeholder="Select Image" required />
+                    placeholder="Select Image" />
                 @error('mission_image')
                     <span class="text-xs text-red-600 dark:text-red-400">
                         {{$message}}
