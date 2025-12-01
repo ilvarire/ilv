@@ -47,7 +47,7 @@ class PaystackController extends Controller
                     'status' => 'paid'
                 ]);
 
-                Mail::to($payment->user->email)->queue(
+                Mail::to($payment->user->email)->send(
                     new PaymentReceived($payment->user->name, $payment->order, $payment->payment_method)
                 );
 
@@ -142,7 +142,7 @@ class PaystackController extends Controller
                 'status' => 'paid'
             ]);
 
-            Mail::to($order->user->email)->queue(
+            Mail::to($order->user->email)->send(
                 new PaymentReceived($order->user->name, $order, $order->payment->payment_method)
             );
 
@@ -204,7 +204,7 @@ class PaystackController extends Controller
                 }
             }
 
-            Mail::to($order->payment->user->email)->queue(
+            Mail::to($order->payment->user->email)->send(
                 new PaymentFailed($order->reference, $order->payment->user->name, $order->payment->payment_method, $order->total_price)
             );
 

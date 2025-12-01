@@ -80,7 +80,7 @@ class ProfileForm extends Component
         $ip = request()->ip();
         $agent = request()->userAgent();
         Mail::to($user->email)
-            ->send(new PasswordChanged($timestamp, $ip, $agent, $user->name));
+            ->queue(new PasswordChanged($timestamp, $ip, $agent, $user->name));
 
         return back()->with('status', 'password-updated');
     }

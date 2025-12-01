@@ -16,7 +16,7 @@
                         </h3>
 
                         <p class="stext-113 cl6 p-b-26">
-                            {{ $policy->policy}}
+                            {!! $policy->policy!!}
                         </p>
                     </div>
                 </div>
