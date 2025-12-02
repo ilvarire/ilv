@@ -15,7 +15,7 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="">
+    <meta property="og:title" content="{{ $site->site_description}}">
     <meta property="og:description"
         content="Discover the latest trends and best deals at {{ config('app.name') }}, Shop now for devices, electronics, home goods, and more with free shipping and secure checkout.">
     <meta property="og:image" content="https://ilvarire.com/storage/site/olu4YjaylfCtvRKGsqNpo50sDLuFNRrfs3PLUjuI.jpg">
@@ -24,7 +24,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url()->current() }}">
-    <meta name="twitter:title" content="">
+    <meta name="twitter:title" content="{{ $site->site_description}}">
     <meta name="twitter:description"
         content="Discover the latest trends and best deals at {{ config('app.name') }}, Shop now for devices, electronics, home goods, and more with free shipping and secure checkout.">
     <meta name="twitter:image" content="https://ilvarire.com/storage/site/olu4YjaylfCtvRKGsqNpo50sDLuFNRrfs3PLUjuI.jpg">
