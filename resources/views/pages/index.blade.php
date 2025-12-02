@@ -2,21 +2,19 @@
 <html lang="en">
 
 <head>
-    <title>{{ $site->site_title ? 'Home - ' . str($site->site_title)->title() : 'Home'}}</title>
+    <title>{{ $site->site_title ? 'Home - ' . str($site->site_title)->title() : 'Home' }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{--
     <meta name="description" content="{{ $site->site_title ?? config('app.name')}}">
     <meta name="keywords"
         content="online shopping, e-commerce, buy online, online store, best deals, shopping cart, shopping website, ecommerce store, products online, fast delivery, free shipping, secure checkout, online deals">
-    --}}
     <meta name="robots" content="">
     <link rel="canonical" href="{{ config('app.url') }}" />
 
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ config('app.url') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ $site->site_description}}">
     <meta property="og:description"
         content="Discover the latest trends and best deals at {{ config('app.name') }}, Shop now for devices, electronics, home goods, and more with free shipping and secure checkout.">
@@ -25,7 +23,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="{{ config('app.url') }}">
+    <meta name="twitter:url" content="{{ url()->current() }}">
     <meta name="twitter:title" content="{{ $site->site_description}}">
     <meta name="twitter:description"
         content="Discover the latest trends and best deals at {{ config('app.name') }}, Shop now for devices, electronics, home goods, and more with free shipping and secure checkout.">
