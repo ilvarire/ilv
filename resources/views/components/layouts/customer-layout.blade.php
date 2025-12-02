@@ -19,7 +19,7 @@
     <meta property="og:description"
         content="Discover the latest trends and best deals at {{ config('app.name', 'Laravel') }}. Shop now for devices, electronics, home goods, and more with free shipping and secure checkout.">
     <meta property="og:image"
-        content="{{  $productimg ? asset('storage/' . $productimg) : asset('storage/' . $site->og_image) }}">
+        content="{{ isset($productimg) && $productimg ? asset('storage/' . $productimg) : asset('storage/' . $site->og_image) }}">
 
 
     <!-- Twitter -->
@@ -29,7 +29,7 @@
     <meta name="twitter:description"
         content="Discover the latest trends and best deals at {{ config('app.name', 'Laravel') }}. Shop now for devices, electronics, home goods, and more with free shipping and secure checkout.">
     <meta name="twitter:image"
-        content="{{  $productimg ? asset('storage/' . $productimg) : asset('storage/' . $site->og_image) }}">
+        content="{{ isset($productimg) && $productimg ? asset('storage/' . $productimg) : asset('storage/' . $site->og_image) }}">
 
 
     <!--===============================================================================================-->
