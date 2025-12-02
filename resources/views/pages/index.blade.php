@@ -6,9 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {{--
     <meta name="description" content="{{ $site->site_title ?? config('app.name')}}">
     <meta name="keywords"
         content="online shopping, e-commerce, buy online, online store, best deals, shopping cart, shopping website, ecommerce store, products online, fast delivery, free shipping, secure checkout, online deals">
+    --}}
     <meta name="robots" content="">
     <link rel="canonical" href="{{ config('app.url') }}" />
 
