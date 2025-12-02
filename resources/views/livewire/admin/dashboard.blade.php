@@ -36,7 +36,7 @@
                     Total Sales
                 </p>
                 <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                    {{ Number::currency($totalRevenue, 'GBP') }}
+                    {{ Number::currency($totalRevenue, 'NGN') }}
                 </p>
             </div>
         </div>
@@ -109,7 +109,7 @@
                                 </div>
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                {{ Number::currency($recentOrder->total_price, 'GBP') }}
+                                {{ Number::currency($recentOrder->total_price, 'NGN') }}
                             </td>
                             <td class="px-4 py-3 text-xs">
                                 <span class="@if ($recentOrder->status === 'pending') px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
@@ -117,8 +117,8 @@
                                     @elseif ($recentOrder->status === 'shipped') px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600
                                         @elseif ($recentOrder->status === 'delivered') px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100
                                             @elseif ($recentOrder->status === 'cancelled') px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700
-                                            @else px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
-                                                @endif">
+                                                @else px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
+                                                    @endif">
                                     {{ $recentOrder->status }}
                                 </span>
                             </td>

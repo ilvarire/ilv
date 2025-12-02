@@ -24,7 +24,7 @@
                                         {{ $item['name'] }}
                                     </td>
                                     <td class="column-3">
-                                        {{ Number::currency($item['unit_price'], 'GBP') }}
+                                        {{ Number::currency($item['unit_price'], 'NGN') }}
                                     </td>
                                     <td class="column-5">
                                         <a href="javascript:;"

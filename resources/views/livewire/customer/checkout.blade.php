@@ -37,7 +37,7 @@
 
                                         </p>
                                     </td>
-                                    <td class="column-3">{{ Number::currency($item['unit_price'], 'GBP') }}</td>
+                                    <td class="column-3">{{ Number::currency($item['unit_price'], 'NGN') }}</td>
                                     <td class="column-4">
                                         <div class="wrap-num-product flex-w m-l-auto m-r-0">
                                             <div class="btn-num-product-down cl8 trans-04 flex-c-m">
@@ -48,7 +48,7 @@
                                         </div>
                                     </td>
                                     <td class="column-5">
-                                        {{ Number::currency($item['total_amount'], 'GBP') }}
+                                        {{ Number::currency($item['total_amount'], 'NGN') }}
                                     </td>
                                 </tr>
                             @empty
@@ -90,7 +90,7 @@
 
                         <div class="size-209">
                             <span class="mtext-110 cl2">
-                                {{ Number::currency($cart_total, 'GBP') }}
+                                {{ Number::currency($cart_total, 'NGN') }}
                             </span>
                         </div>
                     </div>
@@ -187,12 +187,12 @@
                                     </div>
                                 @endif
                                 @if ($discount > 0)
-                                    <p><strong>Discount:</strong> -{{ Number::currency($discount, 'GBP') }}</p>
+                                    <p><strong>Discount:</strong> -{{ Number::currency($discount, 'NGN') }}</p>
                                 @endif
 
 
                                 <span class="stext-112 cl1">
-                                    Shipping fee: {{ Number::currency($shippingFee, 'GBP') }}
+                                    Shipping fee: {{ Number::currency($shippingFee, 'NGN') }}
                                 </span><br>
                                 <span class="stext-112 cl1">
                                     Total Weight: {{ $totalWeight }}kg
@@ -211,7 +211,7 @@
 
                         <div class="size-209 p-t-1">
                             <span class="mtext-110 cl2">
-                                {{ Number::currency($grand_total, 'GBP') }}
+                                {{ Number::currency($grand_total, 'NGN') }}
                             </span>
                         </div>
                     </div>

@@ -8,7 +8,7 @@ We’re writing to inform you that **Order #{{ $reference }}** has been cancelle
 **Reason for Cancellation:**
 {{ $cancellation_reason ?? 'Not specified' }}
 
-**Order Total:** {{ Number::currency($total_price, 'GBP') }}
+**Order Total:** {{ Number::currency($total_price, 'NGN') }}
 
 @component('mail::panel')
 If you made a payment, any eligible refunds will be processed according to our refund policy.

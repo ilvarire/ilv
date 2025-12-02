@@ -5,7 +5,7 @@ Hi {{ $name }},
 
 We wanted to let you know that your refund for **Order #{{ $reference }}** has been successfully processed.
 
-**Refund Amount:** {{ Number::currency($total_price, 'GBP') }}
+**Refund Amount:** {{ Number::currency($total_price, 'NGN') }}
 **Payment Method:** {{ $payment_method }}
 **Refund Date:** {{ now()->format('F j, Y g:i A') }}
 

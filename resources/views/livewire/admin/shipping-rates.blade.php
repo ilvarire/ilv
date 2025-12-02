@@ -84,10 +84,10 @@
                                 {{$shippingRate->state}}
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                {{ Number::currency($shippingRate->base_fee, 'GBP') }}
+                                {{ Number::currency($shippingRate->base_fee, 'NGN') }}
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                {{ Number::currency($shippingRate->fee_per_kg, 'GBP') }}
+                                {{ Number::currency($shippingRate->fee_per_kg, 'NGN') }}
                             </td>
                             <td class="px-4 py-3">
                                 <div class="flex items-center space-x-4 text-sm">

@@ -5,7 +5,7 @@
 
 Thank you for your recent order!
 
-We have received your order, which totals **{{ Number::currency($order->total_price, 'GBP') }}**, but we are still
+We have received your order, which totals **{{ Number::currency($order->total_price, 'NGN') }}**, but we are still
 waiting for payment confirmation.
 
 Your order reference number is **{{ $order->reference }}**.

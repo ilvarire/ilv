@@ -32,7 +32,7 @@
                                     </a>
 
                                     <span class="stext-105 cl3">
-                                        {{ Number::currency($product->price, 'GBP') }}
+                                        {{ Number::currency($product->price, 'NGN') }}
                                     </span>
                                 </div>
 
@@ -99,7 +99,7 @@
                             </a>
 
                             <span class="mtext-106 cl2">
-                                {{ Number::currency($selectedProduct->price, 'GBP') }}
+                                {{ Number::currency($selectedProduct->price, 'NGN') }}
                             </span>
 
                             <p class="stext-102 cl3 p-t-23">

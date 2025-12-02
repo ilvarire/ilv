@@ -65,7 +65,7 @@
 
                     <span>
                         <span class="cl4">{{ ucwords($order->payment->payment_method) }}</span>
-                        {{ Number::currency($order->total_price, 'GBP') }}
+                        {{ Number::currency($order->total_price, 'NGN') }}
                         <span class="cl12 m-l-4 m-r-6">|</span>
                     </span>
                     <span>
@@ -142,7 +142,7 @@
                                     {{$item->product->name }}
                                 </td>
                                 <td class="column-3">
-                                    {{ Number::currency($item->product->price, 'GBP') }}
+                                    {{ Number::currency($item->product->price, 'NGN') }}
                                 </td>
                                 <td class="column-4">
                                     {{ $item->quantity }}
@@ -151,7 +151,7 @@
                                     </span> --}}
                                 </td>
                                 <td class="column-5">
-                                    {{ Number::currency($item->price, 'GBP') }}
+                                    {{ Number::currency($item->price, 'NGN') }}
                                     {{-- {{ $order->created_at->diffForHumans() }} --}}
                                 </td>
                             </tr>

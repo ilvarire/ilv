@@ -114,7 +114,7 @@
                 OG Image
             </span>
 
-            <input type="file" accept=".jpg, .jpeg" wire:model="og_image" value="{{ old('og_image') }}"
+            <input type="file" accept=".jpg, .jpeg, .png" wire:model="og_image" value="{{ old('og_image') }}"
                 class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input"
                 placeholder="Select Image" />
             @error('og_image')

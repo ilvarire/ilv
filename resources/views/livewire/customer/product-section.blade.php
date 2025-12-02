@@ -12,13 +12,6 @@
                 <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5">
                     🛒🛍️
                 </button>
-
-                {{-- @forelse ($categories as $cat)
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".{{$cat->slug}}">
-                    {{$cat->name}}
-                </button>
-                @empty
-                @endforelse --}}
             </div>
 
             <div class="flex-w flex-c-m m-tb-10">
@@ -242,7 +235,7 @@
                                 </a>
 
                                 <span class="stext-105 cl3">
-                                    {{ Number::currency($product->price, 'GBP') }}
+                                    {{ Number::currency($product->price, 'NGN') }}
                                 </span>
                             </div>
 
@@ -318,7 +311,7 @@
                             </a>
 
                             <span class="mtext-106 cl2">
-                                {{ Number::currency($selectedProduct->price, 'GBP') }}
+                                {{ Number::currency($selectedProduct->price, 'NGN') }}
                             </span>
 
                             <p class="stext-102 cl3 p-t-23">

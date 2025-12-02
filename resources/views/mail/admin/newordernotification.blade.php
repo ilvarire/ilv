@@ -6,7 +6,7 @@ Hello Admin,
 A new order has been placed and is awaiting payment confirmation.
 
 **Order Reference:** {{ $order->reference }}
-**Total Amount:** {{ Number::currency($order->total_price, 'GBP') }}
+**Total Amount:** {{ Number::currency($order->total_price, 'NGN') }}
 **Order Date:** {{ $order->created_at->format('d M Y, H:i') }}
 
 Please review the order and monitor.

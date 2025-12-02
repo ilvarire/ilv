@@ -5,7 +5,7 @@ A new order payment has been successfully processed.
 
 **Order ID:** {{ $reference }}
 **Customer:** {{ $email }}
-**Amount Paid:** {{ Number::currency($total_price, 'GBP') }}
+**Amount Paid:** {{ Number::currency($total_price, 'NGN') }}
 **Payment Method:** {{ $payment_method }}
 **Date:** {{ $created_at->format('F j, Y g:i A') }}
 

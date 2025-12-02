@@ -69,7 +69,7 @@
 
                     <span>
                         <span class="cl4">{{ ucwords($payment->payment_method) }}</span>
-                        {{ Number::currency($payment->amount, 'GBP') }}
+                        {{ Number::currency($payment->amount, 'NGN') }}
                     </span>
 
                 </span>

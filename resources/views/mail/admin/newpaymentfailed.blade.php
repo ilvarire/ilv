@@ -6,7 +6,7 @@ A customer's payment attempt has failed.
 **Order ID:** {{ $reference }}
 **Customer:** {{ $name }}
 **Email:** {{ $email }}
-**Amount Attempted:** {{ Number::currency($total_price, 'GBP') }}
+**Amount Attempted:** {{ Number::currency($total_price, 'NGN') }}
 **Payment Method:** {{ $payment_method }}
 **Failure Time:** {{ now()->format('F j, Y g:i A') }}
 

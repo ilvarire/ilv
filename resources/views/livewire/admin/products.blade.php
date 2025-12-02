@@ -108,7 +108,7 @@
                             </td>
 
                             <td class="px-4 py-3 text-sm">
-                                {{ Number::currency($product->price, 'GBP') }}
+                                {{ Number::currency($product->price, 'NGN') }}
                             </td>
                             <td class="px-4 py-3 text-sm">
                                 {{ $product->category->name }}

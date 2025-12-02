@@ -30,7 +30,7 @@
                                 </a>
                             </td>
                             <td class="column-3">
-                                {{ Number::currency($order->total_price, 'GBP') }}
+                                {{ Number::currency($order->total_price, 'NGN') }}
                             </td>
                             <td class="column-4">
                                 <span class="p-lr-15 {{ $order->status === 'delivered' ? 'cl1' : 'cl11' }}">

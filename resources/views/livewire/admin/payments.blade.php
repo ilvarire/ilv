@@ -94,7 +94,7 @@
                                     <div>
                                         <p class="font-semibold"> {{$payment->user->email}} </p>
                                         <p class="text-xs text-gray-600 dark:text-gray-400">
-                                            {{ Number::currency($payment->amount, 'GBP') }}
+                                            {{ Number::currency($payment->amount, 'NGN') }}
                                         </p>
                                     </div>
                                 </div>
@@ -108,8 +108,8 @@
                                      @elseif ($payment->status === 'paid') px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100
                                          @elseif ($payment->status === 'cancelled' || $payment->status === 'failed') px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700
                                              @else px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
-                                                    @endif
-                                                        ">{{ $payment->status }}
+                                                @endif
+                                                                ">{{ $payment->status }}
                                 </span>
 
                             </td>
@@ -212,7 +212,7 @@
                                     </p>
                                     <p class="mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
                                         Amount: <strong>
-                                            {{ Number::currency($selectedPayment->amount, 'GBP') }}
+                                            {{ Number::currency($selectedPayment->amount, 'NGN') }}
                                         </strong>
                                     </p>
                                     <a href="{{ route('admin.customers') }}?email={{$selectedPayment->user->email}}">
@@ -228,13 +228,13 @@
                                     <p class="mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
                                         Status:
                                         <span class="
-                                                                                                                    @if ($selectedPayment->status === 'pending') px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
-                                                                                                                    @elseif ($selectedPayment->status === 'refunded') px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600
-                                                                                                                    @elseif ($selectedPayment->status === 'paid') px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100
-                                                                                                                    @elseif ($selectedPayment->status === 'cancelled' || $selectedPayment->status === 'failed') px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700
-                                                                                                                    @else px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
-                                                                                                                    @endif
-                                                                                                                    ">
+                                                                                                                                            @if ($selectedPayment->status === 'pending') px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
+                                                                                                                                            @elseif ($selectedPayment->status === 'refunded') px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600
+                                                                                                                                            @elseif ($selectedPayment->status === 'paid') px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100
+                                                                                                                                            @elseif ($selectedPayment->status === 'cancelled' || $selectedPayment->status === 'failed') px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700
+                                                                                                                                            @else px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
+                                                                                                                                            @endif
+                                                                                                                                            ">
                                             {{ $selectedPayment->status }}
                                         </span>
                                     </p>
@@ -262,8 +262,8 @@
                             wire:loading.class="opacity-50 cursor-not-allowed"
                             wire:loading.remove.class="active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple"
                             class=" w-full px-5 py-3 ml-4 text-sm font-medium leading-5 text-white transition-colors
-                                                                                                                                                                                                                                                                                                                    duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2
-                                                                                                                                                                                                                                                                                                                    active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                                                                                                                                                                                                                                                                                                                                    duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2
+                                                                                                                                                                                                                                                                                                                                    active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                             Refund Payment
                         </button>
                     @endif

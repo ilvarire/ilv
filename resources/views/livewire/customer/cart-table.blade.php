@@ -35,7 +35,7 @@
 
                                         </p>
                                     </td>
-                                    <td class="column-3">{{ Number::currency($item['unit_price'], 'GBP') }}</td>
+                                    <td class="column-3">{{ Number::currency($item['unit_price'], 'NGN') }}</td>
                                     <td class="column-4">
                                         <div class="wrap-num-product flex-w m-l-auto m-r-0">
                                             <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m"
@@ -87,7 +87,7 @@
 
                         <div class="size-209">
                             <span class="mtext-110 cl2">
-                                {{ Number::currency($cart_total, 'GBP') }}
+                                {{ Number::currency($cart_total, 'NGN') }}
                             </span>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
 
                         <div class="size-209 p-t-1">
                             <span class="mtext-110 cl2">
-                                {{ Number::currency($cart_total, 'GBP') }}
+                                {{ Number::currency($cart_total, 'NGN') }}
                             </span>
                         </div>
                     </div>

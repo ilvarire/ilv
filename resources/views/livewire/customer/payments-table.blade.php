@@ -26,7 +26,7 @@
                                 </a>
                             </td>
                             <td class="column-3">
-                                {{ Number::currency($payment->amount, 'GBP') }}
+                                {{ Number::currency($payment->amount, 'NGN') }}
                             </td>
                             <td class="column-4">
                                 <span class="p-lr-15 {{ $payment->status === 'Paid' ? 'cl1' : 'cl11' }}">

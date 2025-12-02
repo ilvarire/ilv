@@ -27,7 +27,7 @@
                             </a>
 
                             <span class="header-cart-item-info">
-                                {{ $item['quantity'] }} x {{ Number::currency($item['unit_price'], 'GBP') }}
+                                {{ $item['quantity'] }} x {{ Number::currency($item['unit_price'], 'NGN') }}
                             </span>
                         </div>
                     </li>
@@ -39,7 +39,7 @@
 
             <div class="w-full">
                 <div class="header-cart-total w-full p-tb-40">
-                    Total: {{ Number::currency($cart_total, 'GBP') }}
+                    Total: {{ Number::currency($cart_total, 'NGN') }}
                 </div>
 
                 <div class="header-cart-buttons flex-w w-full">

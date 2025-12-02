@@ -5,7 +5,7 @@ Hi {{ $name }},
 
 Unfortunately, your recent payment attempt for **Order #{{ $reference }}** was not successful.
 
-**Amount:** {{ Number::currency($total_price, 'GBP') }}
+**Amount:** {{ Number::currency($total_price, 'NGN') }}
 **Payment Method:** {{ $payment_method }}
 **Date:** {{ now()->format('F j, Y g:i A') }}
 

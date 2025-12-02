@@ -10,7 +10,7 @@ Thank you for shopping with **{{ config('app.name') }}**!
 
 ## 🧾 Order Summary
 **Order ID:** {{ $order->reference }}
-**Payment Amount:** {{ Number::currency($order->total_price, 'GBP') }}
+**Payment Amount:** {{ Number::currency($order->total_price, 'NGN') }}
 **Payment Method:** {{ str($payment_method)->title() }}
 **Date:** {{ $order->created_at->format('F j, Y • g:i A') }}
 
